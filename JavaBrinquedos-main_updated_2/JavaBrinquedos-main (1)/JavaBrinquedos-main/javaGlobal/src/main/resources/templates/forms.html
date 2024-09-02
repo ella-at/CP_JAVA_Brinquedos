@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Novo Brinquedo</title>
+    <link rel="stylesheet" href="../static/css/estilo.css">
+</head>
+<body>
+
+<h1 class="page-title">Novo Brinquedo</h1>
+
+<div class="centered-content-container">
+    <div class="form-container">
+        <form th:action="@{/form}" th:object="${product}" method="post">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" th:field="*{nome}" class="form-control" required />
+            </div>
+            <div class="form-group">
+                <label for="preco">Preço:</label>
+                <input type="number" id="preco" th:field="*{preco}" class="form-control" required min="0" step="0.01" />
+            </div>
+            <div class="form-group">
+                <label for="tipo">Tipo de Brinquedo:</label>
+                <select id="tipo" th:field="*{tipo}" class="form-control" required>
+                    <option value="">Selecione um tipo</option>
+                    <option value="Boneca">Boneca</option>
+                    <option value="Jogo">Jogo</option>
+                    <option value="Arte">Arte</option>
+                    <option value="Educacional">Educacional</option>
+                    <option value="Tabuleiro">Tabuleiro</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="descricao">Descrição:</label>
+                <textarea id="descricao" th:field="*{descricao}" class="form-control" required></textarea>
+            </div>
+            <div class="button-container">
+                <button type="submit" class="btn btn-primary">Salvar</button>
+                <a href="listar.html" class="btn btn-secondary">Ver Lista de Brinquedos</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

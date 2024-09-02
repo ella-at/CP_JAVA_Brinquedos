@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Brinquedos</title>
+    <link rel="stylesheet" href="../static/css/estilo.css">
+</head>
+<body>
+
+<h1 class="page-title">Lista de Brinquedos</h1>
+
+<div class="centered-content-container">
+    <div class="button-container">
+        <a href="forms.html" class="btn btn-primary">Adicionar Novo Brinquedo</a>
+    </div>
+
+    <div class="list-container">
+        <ul class="product-list">
+            <li th:each="product : ${products}" class="product-item">
+                <h2 class="product-name" th:text="${product.nome}">Nome do Brinquedo</h2>
+                <p class="product-description" th:text="${product.descricao}">Descrição do Brinquedo</p>
+                <p class="product-price" th:text="${product.preco}">Preço</p>
+                <p class="product-type" th:text="${product.tipo}">Tipo</p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>
